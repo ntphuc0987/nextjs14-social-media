@@ -17,7 +17,7 @@ export const SidebarLinks = [
       <AddPhotoAlternateOutlined sx={{ color: "black", fontSize: "26px" }} />
     ),
     route: "/create-post",
-    label: "Add Photo",
+    label: "Create Post",
   },
   {
     icon: <GroupOutlined sx={{ color: "black", fontSize: "26px" }} />,

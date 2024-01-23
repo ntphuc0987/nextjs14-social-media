@@ -2,20 +2,21 @@
 
 import { usePathname } from "next/navigation";
 import TopBar from "./TopBar";
-import { pageTitles } from "@/constants";
-import BottomBar from "./BottomBar";
+import { pageTitles } from "@constants";
+
 
 const MainContainer = ({ children }) => {
   //Get the current url path
   const currentPath = usePathname();
   const regex = /^\/([^\/]+)/;
   const firstPath = currentPath.match(regex)
-    ? path.match(regex)[0]
+    ? currentPath.match(regex)[0]
     : currentPath;
 
   //get title current path
+  
   const title = pageTitles.find((page) => page.url === firstPath)?.title || "";
-
+  
   return (
     <section className="flex flex-col flex-1 max-w-3xl px-4 md:px-10 lg:px-4 xl:px-20">
       <TopBar />
@@ -27,7 +28,6 @@ const MainContainer = ({ children }) => {
           {children}
         </div>
       </div>
-     
     </section>
   );
 };
